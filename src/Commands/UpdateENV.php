@@ -1,6 +1,6 @@
 <?php
 
-namespace Susheelbhai\Laraship\Commands;
+namespace Susheelbhai\Laratrack\Commands;
 
 use Illuminate\Console\Command;
 
@@ -11,7 +11,7 @@ class UpdateENV extends Command
      *
      * @var string
      */
-    protected $signature = 'laraship:update_env';
+    protected $signature = 'laratrack:update_env';
 
     /**
      * The console command description.

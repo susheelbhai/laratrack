@@ -14,4 +14,10 @@ class LaratrackService
         return $repo->trackLicence();
     }
 
+    public function notifyLicence()
+    {
+        $repo = new LicenceRepository();
+        return $repo->notifyLicence();
+    }
+
 }

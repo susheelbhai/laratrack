@@ -12,6 +12,7 @@ class LaratrackServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'laratrack');
         $this->app->bind('laratrack', function(){
             return new LaratrackService();
         });
@@ -28,7 +29,10 @@ class LaratrackServiceProvider extends ServiceProvider
             ]);
         }
         $checkLicence = Laratrack::trackLicence();
-        dd($checkLicence);
+        if ($checkLicence==false) {
+            Laratrack::notifyLicence();
+        }
+        
     }
 
 }
