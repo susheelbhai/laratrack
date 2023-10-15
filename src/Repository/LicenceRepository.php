@@ -1,10 +1,11 @@
 <?php
 
-namespace Susheelbhai\Laraship\Repository;
+namespace Susheelbhai\Laratrack\Repository;
 
 class LicenceRepository
 {
     function trackLicence() {
-        return 1;
+        $env = $_ENV;
+        $config = \config();
     }
 }

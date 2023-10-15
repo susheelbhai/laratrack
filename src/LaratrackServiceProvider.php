@@ -7,12 +7,12 @@ use Illuminate\Support\ServiceProvider;
 use Susheelbhai\Laratrack\Services\Facades\Laratrack;
 use Susheelbhai\Laratrack\Services\LaratrackService;
 
-class LaratrackProvider extends ServiceProvider
+class LaratrackServiceProvider extends ServiceProvider
 {
     public function register(): void
     {
         $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
-        $this->app->bind('Laratrack', function(){
+        $this->app->bind('laratrack', function(){
             return new LaratrackService();
         });
         $loader = AliasLoader::getInstance();
