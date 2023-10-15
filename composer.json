@@ -1,0 +1,28 @@
+{
+    "name": "susheelbhai/laratrack",
+    "description": "To track the licence of project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Susheelbhai\\Laratrack\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Susheelbhai\\Laratrack\\LaratrackServiceProvider"
+            ],
+            "aliases": {
+                "Laratrack": "Susheelbhai\\Laratrack\\Facade"
+            }
+        }
+    },
+    "authors": [
+        {
+            "name": "Susheel Kumar Singh",
+            "email": "susheelkrsingh306@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
