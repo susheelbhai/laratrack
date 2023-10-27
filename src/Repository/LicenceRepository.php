@@ -2,6 +2,7 @@
 
 namespace Susheelbhai\Laratrack\Repository;
 
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Request;
 use Susheelbhai\Laratrack\Mail\NotifyLicence;
@@ -11,10 +12,14 @@ class LicenceRepository
     function trackLicence()
     {
         $allowed_url = [
-            'http://127.0.0.3:8000',
-            'http://127.0.0.2:8000',
+            'http://127.0.0.1:8000',
+            'http://localhost/frontier/public_html',
+            'https://preview.digilight.in/frontier/public_html'
         ];
         $visited_url = Request::root();
+        if (Str::contains($visited_url, ['127.0.0.1', 'localhost'])) {
+            return true;
+        }
         if (in_array($visited_url, $allowed_url)) {
             return true;
         } else {

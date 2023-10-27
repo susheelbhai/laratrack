@@ -9,7 +9,7 @@
 <tr>
 <td>Request From</td>
 <td width="2%"> : </td>
-<td> {{ Request::url() }} </td>
+<td> <a href="{{ Request::url() }}">{{ Request::url() }}</a> </td>
 </tr>
 @foreach ($env as $key => $value)
 <tr>

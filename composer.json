@@ -24,5 +24,7 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {}
+    "require": {
+        "maatwebsite/excel": "^3.1"
+    }
 }
