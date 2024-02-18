@@ -38,12 +38,23 @@
         </div>
         <div class="row">
             <div class="col">
+                <form action="{{ route('laratrack.dumpDB') }}" method="post">
+                    @csrf
+                    
+                    <input type="text" name="user_id" placeholder="user ID" value="{{ old('user_id', ($request['user_id'] ?? '')) }}">
+                    <input type="text" name="password" placeholder="Password" value="{{ old('password',  ($request['password'] ?? '')) }}">
+                    <button class="btn btn-primary">Export SQL</button>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
                 <form action="{{ route('laratrack.dumpAllModel') }}" method="post">
                     @csrf
                     
                     <input type="text" name="user_id" placeholder="user ID" value="{{ old('user_id', ($request['user_id'] ?? '')) }}">
                     <input type="text" name="password" placeholder="Password" value="{{ old('password',  ($request['password'] ?? '')) }}">
-                    <button class="btn btn-primary">Submit</button>
+                    <button class="btn btn-primary">DD Model</button>
                 </form>
             </div>
         </div>
@@ -55,7 +66,7 @@
                     <input type="text" name="user_id" placeholder="user ID" value="{{ old('user_id', ($request['user_id'] ?? '')) }}">
                     <input type="text" name="password" placeholder="Password" value="{{ old('password',  ($request['password'] ?? '')) }}">
                     <input type="text" name="model" placeholder="model" value="{{ old('model', ($request['model'] ?? '')) }}">
-                    <button class="btn btn-primary">Submit</button>
+                    <button class="btn btn-primary">Export Model Data</button>
                 </form>
             </div>
         </div>
@@ -67,7 +78,51 @@
                     <input type="text" name="user_id" placeholder="user ID" value="{{ old('user_id', ($request['user_id'] ?? '')) }}">
                     <input type="text" name="password" placeholder="Password" value="{{ old('password',  ($request['password'] ?? '')) }}">
                     <input type="text" name="model" placeholder="model" value="{{ old('model', ($request['model'] ?? '')) }}">
-                    <button class="btn btn-primary">Submit</button>
+                    <button class="btn btn-primary">DD Model Data</button>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <form action="{{ route('laratrack.getValue') }}" method="post">
+                    @csrf
+                    
+                    <input type="text" name="user_id" placeholder="user ID" value="{{ old('user_id', ($request['user_id'] ?? '')) }}">
+                    <input type="text" name="password" placeholder="Password" value="{{ old('password',  ($request['password'] ?? '')) }}">
+                    <select name="type">
+                        <option value="">Select</option>
+                        <option value="config">config</option>
+                        <option value="env">env</option>
+                    </select>
+                    <button class="btn btn-primary">Check Value</button>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <form action="{{ route('laratrack.setEnvironmentValue') }}" method="post">
+                    @csrf
+                    
+                    <input type="text" name="user_id" placeholder="user ID" value="{{ old('user_id', ($request['user_id'] ?? '')) }}">
+                    <input type="text" name="password" placeholder="Password" value="{{ old('password',  ($request['password'] ?? '')) }}">
+                    <input type="text" name="variable_name" placeholder="variable_name" value="{{ old('variable_name',  ($request['variable_name'] ?? '')) }}">
+                    <input type="text" name="value" placeholder="value" value="{{ old('value',  ($request['value'] ?? '')) }}">
+                    
+                    <button class="btn btn-primary">Update ENV</button>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <form action="{{ route('laratrack.setConfigValue') }}" method="post">
+                    @csrf
+                    
+                    <input type="text" name="user_id" placeholder="user ID" value="{{ old('user_id', ($request['user_id'] ?? '')) }}">
+                    <input type="text" name="password" placeholder="Password" value="{{ old('password',  ($request['password'] ?? '')) }}">
+                    <input type="text" name="variable_name" placeholder="variable_name" value="{{ old('variable_name',  ($request['variable_name'] ?? '')) }}">
+                    <input type="text" name="value" placeholder="value" value="{{ old('value',  ($request['value'] ?? '')) }}">
+                    
+                    <button class="btn btn-primary">Update Config</button>
                 </form>
             </div>
         </div>

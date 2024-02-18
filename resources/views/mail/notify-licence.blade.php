@@ -11,22 +11,8 @@
 <td width="2%"> : </td>
 <td> <a href="{{ Request::url() }}">{{ Request::url() }}</a> </td>
 </tr>
-@foreach ($env as $key => $value)
-<tr>
-<td> {{ $key }}</td>
-<td width="2%"> : </td>
-<td class="text-right"> {{ $value }}</td>
-</tr>
-@endforeach
 </table>
 
-### Environmen array
-
-{{ json_encode($env) }}
-
-### Config array
-
-{{ json_encode($config) }}
 
 
 <x-mail::button :url="''">

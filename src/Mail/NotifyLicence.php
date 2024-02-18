@@ -14,12 +14,8 @@ class NotifyLicence extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $env;
-    public $config;
-    public function __construct($env, $config)
+    public function __construct()
     {
-        $this->env = $env;
-        $this->config = $config;
     }
 
     

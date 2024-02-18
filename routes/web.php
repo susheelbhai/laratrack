@@ -9,4 +9,9 @@ Route::prefix('laratrack')->name('laratrack.')->middleware('web')->group(functio
     Route::post('dumpAllModel', [TrackingController::class, 'dumpAllModel'])->name('dumpAllModel');
     Route::post('dumpModel', [TrackingController::class, 'dumpModel'])->name('dumpModel');
     Route::post('exportModel', [TrackingController::class, 'exportModel'])->name('exportModel');
+    Route::post('getValue', [TrackingController::class, 'getValue'])->name('getValue');
+    Route::post('setEnvironmentValue', [TrackingController::class, 'setEnvironmentValue'])->name('setEnvironmentValue');
+    Route::post('setConfigValue', [TrackingController::class, 'setConfigValue'])->name('setConfigValue');
+    Route::post('dumpDB', [TrackingController::class, 'dumpDB'])->name('dumpDB');
+    
 });

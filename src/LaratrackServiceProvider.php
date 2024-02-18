@@ -13,6 +13,7 @@ class LaratrackServiceProvider extends ServiceProvider
     {
         $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'laratrack');
+        $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
         $this->app->bind('laratrack', function(){
             return new LaratrackService();
         });
